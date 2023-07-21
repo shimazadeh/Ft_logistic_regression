@@ -101,11 +101,14 @@ def main():
 
     #training
     X = data[["Herbology", "Astronomy", "Ancient Runes", "Defense Against the Dark Arts"]]
-    y = data["Hogwarts House"]
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    y = data[["Hogwarts House"]]
 
-    # Step 2: Instantiate the MyLogisticRegression class
+    #Step 1: clean up the data
     logistic_regression = MyLogisticRegression(alpha=0.001, max_iter=1000)
+    X_ = logistic_regression.add_intercept(X)
+
+    # Step 2: Split the data 
+    X_train, X_test, y_train, y_test = train_test_split(X_, y, test_size=0.2, random_state=42)
 
     # Step 3: Fit the model to your training data
     logistic_regression.fit(X_train, y_train)
@@ -113,7 +116,14 @@ def main():
     # Step 4: Predict the class labels for your test data
     y_pred = logistic_regression.predict(X_test)
 
-    print(y_pred)
+    # print("final prediction: ", y_pred)
+    confusion_mat = logistic_regression.confusion_matrix(y_test.squeeze(), y_pred)
+
+    print("Gryffindor parameters:")
+    print("precision: ", logistic_regression.precision_score_(y_test.squeeze(), y_pred, "Gryffindor"))
+    print("recall: ", logistic_regression.recall_score_(y_test.squeeze(), y_pred, "Gryffindor"))
+    print("accuracy: ", logistic_regression.accuracy_score_(y_test.squeeze(), y_pred, "Gryffindor"))
+    print("F1 score: ", logistic_regression.F1_score_(y_test.squeeze(), y_pred, "Gryffindor"))
 
 if __name__ == "__main__":
 	main()
