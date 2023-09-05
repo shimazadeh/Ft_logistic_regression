@@ -10,7 +10,6 @@ Implement one-vs-all logistic regression that will solve classification problem:
 - Pandas
 - Matplotlib
 - Sklearn
-- Seaborn
 - Tabulate
 - Scipy
 
