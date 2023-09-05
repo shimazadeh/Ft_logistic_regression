@@ -1,6 +1,8 @@
 # DataScience x Logistic Regression | School-42 project
-Implement one-vs-all logistic regression that will solve classification problem. Recreated Poudlard's Sorting Hat by implementing 
-logistic regression from scratch. 
+Implement one-vs-all logistic regression that will solve classification problem: 
+- Implementation of pandas.DataFrame.describe from scratch
+- Implementation of data visulazionation tools to make insights and develop an intuition of what the data looks like
+- Recreated Poudlard's Sorting Hat by implementing logistic regression from scratch.
 
 ## Requirements:
 - Python 3
@@ -48,7 +50,8 @@ Here I developed some data visualization tools to make insights and develop an i
 
 - pair_plot.py: displays a pair plot matrix of the data to see what features can be eliminated and  what features can be used for the logistic regression model:
   
-  ![Figure_3](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/3582dfc1-66db-44cb-9b20-0be9c55203eb)
+  ![pair_plot](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/216e4d59-4d86-4aa2-87a3-cdbe3c3e80a7)
+
 
 ## Training and Evaluation
 
