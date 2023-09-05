@@ -22,8 +22,9 @@ logistic regression from scratch.
 describe.py is implementation of pandas.DataFrame.describe. This program takes a dataset as a parameter and it displays all the statistical 
 parameters of all numerical features. See the data analysis folder for the code implementation. Here is the output of the dataset used in this project:
 
-|          | Arith       | Astro    | Herbo    | Defen    | Divin   | Muggl    | Ancie   | Histo   | Trans   | Potio   | Care    | Charm    | Flyin   |
-| count    | 1251        | 1251     | 1251     | 1251     | 1251    | 1251     | 1251    | 1251    | 1251    | 1251    | 1251    | 1251     | 1251    |
+|          | Arith | Astro | Herbo | Defen | Divin | Muggl | Ancie | Histo | Trans | Potio | Care | Charm | Flyin |
+| -------- | ----------- | -------- | -------- | -------- | ------- | -------- | ------- | ------- | ------- | ------- | ------- | -------- | ------- |
+| count | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 |
 | mean     | 49453.1     | 46.4764  | 1.1895   | -0.4648  | 3.2138  | -222.904 | 496.252 | 2.9786  | 1029.86 | 5.9613  | -0.0643 | -243.326 | 23.109  |
 | std      | 16701.6     | 520.946  | 5.2231   | 5.2095   | 4.111   | 484.986  | 106.711 | 4.457   | 43.9829 | 3.1029  | 0.9726  | 8.7904   | 97.755  |
 | skew     | 2.78942e+08 | 271385   | 27.2812  | 27.1385  | 16.9003 | 235211   | 11387.2 | 19.8645 | 1934.49 | 9.6281  | 0.946   | 77.2712  | 9556.04 |
