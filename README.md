@@ -1,4 +1,4 @@
-# DataScience x Logistic Regression | School-42 project
+# DataScience | Logistic Regression | 42Paris
 Implement one-vs-all logistic regression that will solve classification problem: 
 - Implementation of pandas.DataFrame.describe from scratch
 - Implementation of data visulazionation tools to make insights and develop an intuition of what the data looks like
