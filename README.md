@@ -1,7 +1,7 @@
 # DataScience | Logistic Regression | 42Paris
 Implement one-vs-all logistic regression that will solve classification problem: 
 - Implementation of pandas.DataFrame.describe from scratch
-- Implementation of data visulazionation tools to make insights and develop an intuition of what the data looks like
+- Implementation of data visulazionation tools from scratch to make insights and develop an intuition of what the data looks like
 - Recreated Poudlard's Sorting Hat by implementing logistic regression from scratch.
 
 ## Requirements:
