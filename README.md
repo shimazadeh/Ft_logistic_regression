@@ -40,9 +40,9 @@ parameters of all numerical features. See the data analysis folder for the code 
 Here I developed some data visualization tools to make insights and develop an intuition of what the data looks like:
 - Histogram.py: generates the histogram of the features to see which Hogwarts course has a homogeneous score distribution between all four houses:
   
-  ![Figure_1](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/0ae2e4af-677b-4369-bfe1-cf4684a59596)
+  ![histograms](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/c7950c13-d595-4a22-ae7b-fc3c71415ec2)
 
-- scatter_plot.py: displays a scatter plot of the data to see what are the two features that are similar:
+- scatter_plot.py: displays a scatter plot of the features in the data that are similar and one can be eliminated:
   
   ![Figure_2](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/9748a445-b3bf-4dd4-b258-43ba4a052e17)
 
