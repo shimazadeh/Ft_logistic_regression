@@ -22,7 +22,7 @@ logistic regression from scratch.
 describe.py is implementation of pandas.DataFrame.describe. This program takes a dataset as a parameter and it displays all the statistical 
 parameters of all numerical features. See the data analysis folder for the code implementation. Here is the output of the dataset used in this project:
 
-|          | Arith | Astro | Herbo | Defen | Divin | Muggl | Ancie | Histo | Trans | Potio | Care | Charm | Flyin |
+|          | Arithmancy | Astronomy | Herbology | Defense Against the Dark Arts | Divination | Muggle Studies | Ancient Runes | History of Magi | Transfiguration | Potions | Care of Magical Creatures | Charms | Flying |
 | -------- | ----------- | -------- | -------- | -------- | ------- | -------- | ------- | ------- | ------- | ------- | ------- | -------- | ------- |
 | count | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 | 1251 |
 | mean     | 49453.1     | 46.4764  | 1.1895   | -0.4648  | 3.2138  | -222.904 | 496.252 | 2.9786  | 1029.86 | 5.9613  | -0.0643 | -243.326 | 23.109  |
