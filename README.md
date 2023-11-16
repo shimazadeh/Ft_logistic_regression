@@ -17,8 +17,8 @@ Implement one-vs-all logistic regression that will solve classification problem:
 <pre><code>
   git clone https://github.com/shimazadeh/Ft_logistic_regression.git DSLR
   cd DSLR
-  pip3 install -r requirements.txt</code></pre>
-  python main.py config.yaml: config.yaml file must include necessary information for training and testing purposes
+  pip3 install -r requirements.txt
+  python main.py config.yaml: config.yaml file must include necessary information for training and testing purposes</code></pre>
 
 ## Implementation
 The following sections indicates the method and results for each part of the program, note all the methods are developed from scratch:
