@@ -1,6 +1,6 @@
 lr: 0.01
 epoches: 1000
-batch_size: 800
+batch_size: 1
 data_file: "dataset_train.csv"
 mode: "train"
 model_file: ""

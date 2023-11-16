@@ -16,13 +16,12 @@ import joblib
 import yaml
 import sys
 
-def training(lr, iteration, batch_size, file):
+def training(lr, iteration, batch_size, file, features):
     data_raw = pd.read_csv(file)
     data = data_raw.dropna()
     scaler = StandardScaler()
 
-    X_raw = data[["Divination", "Charms", "Flying", "Ancient Runes", "Defense Against the Dark Arts"]]
-    # X_raw = data[["Herbology", "Astronomy", "Ancient Runes", "Defense Against the Dark Arts"]]
+    X_raw = data[features]
     y = data[["Hogwarts House"]]
     X = scaler.fit_transform(X_raw)
 
@@ -80,9 +79,10 @@ if __name__ == "__main__":
     file = config['data_file']
     model = config['model_file']
     mode = config['mode']
+    features = [key for key, value in config['features'].items() if value == True]
 
     if (mode == "train"):
-        training(lr, epoches, batch_size, file)
+        training(lr, epoches, batch_size, file, features)
     elif (mode == "test"):
         if model is None:
             print("model file is not provided")
