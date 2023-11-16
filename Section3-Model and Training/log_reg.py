@@ -42,7 +42,7 @@ class MyLogisticRegression():
 		softmax = exp_z / np.sum(exp_z, axis=1, keepdims=True)
 		return (softmax)
 
-	def loss_(self, y, y_hat):
+	def loss_(self, y, y_hat):#binary_cross_entropy
 		y_hat = y_hat  + 1e-15  # to prevent log(0) or log(1)
 		loss = np.sum(y * np.log(y_hat) + (1.0 - y) * np.log(1.0 - y_hat), axis=0) / len(y)
 		return (-loss)
@@ -51,7 +51,15 @@ class MyLogisticRegression():
 		m = len(x)
 		gradient = np.dot(x.T, (y_hat - y)) / m 
 		return gradient
-		
+	
+	def early_stopping(self):#techniqually you need to calculate the loss on a validation set and then use that loss to evaluate
+		temp = self.losses.iloc[-2:]
+		tolerance = [0.001, 0.001, 0.001, 0.001]
+
+		if (np.abs(np.array(temp.iloc[0:1]) - np.array((temp.iloc[1:2]))) < tolerance).all():
+			return True
+		return False
+
 	def fit(self, x, y):
 		y_ = self.lab_encoder(y.squeeze())
 		self.theta = np.random.randn(x.shape[1], y_.shape[1]) * np.sqrt(2 / x.shape[1])
@@ -60,18 +68,25 @@ class MyLogisticRegression():
 			self.batch = len(x)
 
 		for _ in range(self.max_iter):
-			indices = np.random.permutation(len(x))[:self.batch]
+			for class_index in range(self.theta.shape[1]):
+				indices = np.random.permutation(len(x))[:self.batch]
 
-			x_batch = x[indices]
-			y_batch = y_[indices]
-
-			h_ = self.softmax_(x_batch)
-			grad= self.gradient(x_batch, y_batch, h_)
-			self.theta -= self.alpha * grad
-			
-			loss = self.loss_(y_batch, h_)
+				x_batch = x[indices]
+				y_batch = y_[:, class_index][indices]
+				
+				h_ = self.softmax_(x_batch)
+				grad= self.gradient(x_batch, y_batch, h_[:, class_index])
+				
+				self.theta[:, class_index] -= self.alpha * grad
+				
+			loss = self.loss_(y_, self.softmax_(x))
 			self.losses.loc[len(self.losses)] = loss.flatten()
 			print(f"iteration {_}/{self.max_iter}: loss: {loss}")
+
+			#early stopping
+			# if _ > 0 and self.early_stopping() == True:
+				# break
+
 		self.visualize_training()
 		self.save_model()
 
