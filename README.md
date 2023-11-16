@@ -44,10 +44,16 @@ parameters of all numerical features. See the data analysis folder for the code 
 ## Data Visualization
 Three programs that implementation of histogram, scatter plot and pair-plot library in python:
 
-| Histogram.py                                  | scatter_plot.py                               | pair_plot.py                                 |
-|-----------------------------------------------|-----------------------------------------------|----------------------------------------------|
-| Generates the histogram of the features to see the homogeneous score distribution between all four houses. | Displays a scatter plot of similar features to identify those that can be eliminated. | Displays a pair plot matrix of the data to identify features for the logistic regression model.  |
-| ![Histogram Screenshot](<Screen Shot 2023-11-15 at 6.40.41 PM.png>) | ![Scatter Plot Screenshot](<Section2-DataVisualization/_Astronomy_vs_Defense Against the Dark Arts.png>) | ![Pair Plot Screenshot](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/216e4d59-4d86-4aa2-87a3-cdbe3c3e80a7) |
+| Histogram.py                                  | scatter_plot.py                               |
+|-----------------------------------------------|-----------------------------------------------|
+| Generates the histogram of the features to see the homogeneous score distribution between all four houses. | Displays a scatter plot of similar features to identify those that can be eliminated. |
+| ![Histogram Screenshot](<Screen Shot 2023-11-15 at 6.40.41 PM.png>) | ![Scatter Plot Screenshot](<Section2-DataVisualization/_Astronomy_vs_Defense Against the Dark Arts.png>) |
+
+| pair_plot.py                                                                                       |
+|----------------------------------------------------------------------------------------------------|
+| Displays a pair plot matrix of the data to identify features for the logistic regression model.  |
+| ![Pair Plot Screenshot](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/216e4d59-4d86-4aa2-87a3-cdbe3c3e80a7) |
+
 
 
 ## Training and Evaluation
@@ -61,7 +67,7 @@ During training the loss of each category is printed in the terminal for each it
 
 
 
-| Stochastic GD                            | Mini-Batch GD                               | GD                                |
-|------------------------------------------|----------------------------------------|-----------------------------------|
+| Stochastic GD                                                     | Mini-Batch GD                                                     | GD                                                                |
+|-------------------------------------------------------------------|-------------------------------------------------------------------|-------------------------------------------------------------------|
 |![Alt text](<Section3-Model and Training/Loss_training_SGD.png>)|![Alt text](<Section3-Model and Training/Loss_training_MiniGD.png>)|![Alt text](<Section3-Model and Training/Loss_training_GD.png>)|
 
