@@ -35,9 +35,8 @@ class describe():
     def save_table_to_file(self, file_name):
         arr = np.array(self.table, dtype=object)    
         table_str = tabulate(np.transpose(arr), headers='firstrow', numalign="center")
-        print(table_str)
-        # with open(file_name, "w") as file:
-        #     file.write(table_str)
+        with open(file_name, "w") as file:
+            file.write(table_str)
 
 def main(): 
     desc = describe()
