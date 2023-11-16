@@ -13,13 +13,17 @@ Implement one-vs-all logistic regression that will solve classification problem:
 - Tabulate
 - Scipy
 
-## Set-up
+## How to Run:
 <pre><code>
   git clone https://github.com/shimazadeh/Ft_logistic_regression.git DSLR
   cd DSLR
   pip3 install -r requirements.txt</code></pre>
+  python main.py config.yaml: config.yaml file must include necessary information for training and testing purposes
 
-## Data Analysis
+## Implementation
+The following sections indicates the method and results for each part of the program, note all the methods are developed from scratch:
+
+### Data Analysis
 describe.py is implementation of pandas.DataFrame.describe. This program takes a dataset as a parameter and it displays all the statistical 
 parameters of all numerical features. See the data analysis folder for the code implementation. Here is the output of the dataset used in this project:
 
@@ -38,20 +42,26 @@ parameters of all numerical features. See the data analysis folder for the code 
 | max      | 104956      | 1016.21  | 10.2968  | 9.6674   | 10.032  | 1092.39  | 745.396 | 11.8897 | 1094.46 | 13.5368 | 3.0565  | -225.428 | 279.07  |
 
 ## Data Visualization
-Here I developed some data visualization tools to make insights and develop an intuition of what the data looks like:
-- Histogram.py: generates the histogram of the features to see which Hogwarts course has a homogeneous score distribution between all four houses:
-  
-  ![histograms](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/c7950c13-d595-4a22-ae7b-fc3c71415ec2)
+Three programs that implementation of histogram, scatter plot and pair-plot library in python:
 
-- scatter_plot.py: displays a scatter plot of the features in the data that are similar and one can be eliminated:
-  
-  ![Figure_2](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/9748a445-b3bf-4dd4-b258-43ba4a052e17)
-
-- pair_plot.py: displays a pair plot matrix of the data to see what features can be eliminated and  what features can be used for the logistic regression model:
-  
-  ![pair_plot](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/216e4d59-4d86-4aa2-87a3-cdbe3c3e80a7)
+| Histogram.py                                  | scatter_plot.py                               | pair_plot.py                                 |
+|-----------------------------------------------|-----------------------------------------------|----------------------------------------------|
+| Generates the histogram of the features to see the homogeneous score distribution between all four houses. | Displays a scatter plot of similar features to identify those that can be eliminated. | Displays a pair plot matrix of the data to identify features for the logistic regression model.  |
+| ![Histogram Screenshot](<Screen Shot 2023-11-15 at 6.40.41 PM.png>) | ![Scatter Plot Screenshot](<Section2-DataVisualization/_Astronomy_vs_Defense Against the Dark Arts.png>) | ![Pair Plot Screenshot](https://github.com/shimazadeh/Ft_logistic_regression/assets/67879533/216e4d59-4d86-4aa2-87a3-cdbe3c3e80a7) |
 
 
 ## Training and Evaluation
+The program is modular and can be run with different settings. Adjust the config.yml file with your speicfic parameters and feeatures. The program can be run in two different mode: training and testing:
+- Training: you must provide models parameters, the dataset and features to do the trainings in the yml file
+- Testing: this mode of the program uses the model.joblib file generated from the training phase and outputs the result in a json file. 
 
+During training the loss of each category is printed in the terminal for each iteration. At the end of the training a confusion matrix with performance of each category is also generated in the terminal.
+
+![Alt text](<Screen Shot 2023-11-15 at 6.56.11 PM.png>)
+
+
+
+| Stochastic GD                            | Mini-Batch GD                               | GD                                |
+|------------------------------------------|----------------------------------------|-----------------------------------|
+|![Alt text](<Section3-Model and Training/Loss_training_SGD.png>)|![Alt text](<Section3-Model and Training/Loss_training_MiniGD.png>)|![Alt text](<Section3-Model and Training/Loss_training_GD.png>)|
 
